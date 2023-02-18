@@ -16,7 +16,7 @@ const Search = () => {
     console.log('value: ',data)
     return (
         <>
-            <input type='text' placeholder='Поиск' value={value} onChange={({target}) => {
+            <input type='number' placeholder='Поиск' value={value} onChange={({target}) => {
                 dispatch(setSearch({value: target.value}))
             }} />
         </>
