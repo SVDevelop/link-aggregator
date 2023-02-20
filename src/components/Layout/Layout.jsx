@@ -1,22 +1,20 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom'
-import { Header } from '../Header/Header';
+import { Header } from '@/components/Header/Header';
 
-// import clsx from 'clsx';
-// import styles from './Layout.module.scss'
+import clsx from 'clsx';
+import styles from '@components/Layout/Layout.module.scss'
+import { Footer } from '../Footer/Footer';
 
 
 const Layout = () => {
     return (
-        <div className='' style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'stretch',
-            minHeight: '100vh',
-        }}>
+        <div className={clsx(styles.wrapper)} >
             <Header />
-            <Outlet />
-            {/* //footer */}
+            <div className={clsx(styles.content)}>
+                <Outlet />
+            </div>
+            <Footer />
         </div>
     );
 };
