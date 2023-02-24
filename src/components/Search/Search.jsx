@@ -20,12 +20,14 @@ const Search = () => {
     console.log('value: ',data)
     return (
         <div className={clsx(styles.wrapper)}>
-            <input className={clsx(styles.input, {[styles.hidden]: hidden})} type='number' placeholder='Поиск' value={value} onChange={({target}) => {
+            <div className={clsx(styles.wrapper_input)}>
+             <input className={clsx(styles.input, {[styles.hidden]: hidden})} type='number' placeholder='Поиск' value={value} onChange={({target}) => {
                 dispatch(setSearch({value: target.value}))
-            }} />
-            <button className={clsx(styles.btn)} onClick={() => {
+             }} />
+             <button className={clsx(styles.btn)} onClick={() => {
                 setHidden(x => !x)
-            }}>btn</button>
+             }}>btn</button>
+            </div>
         </div>
     );
 };
